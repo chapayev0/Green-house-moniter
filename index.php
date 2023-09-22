@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sign Up</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style/style.css">
 
 </head>
 <body>
@@ -15,6 +15,7 @@
   </head>
 
 <body>
+
 <div id="form">
   <div class="container">
     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
@@ -26,7 +27,11 @@
         <div class="tab-content">
           <div class="tab-pane fade active in" id="signup">
             <h2 class="text-uppercase text-center"> Sign Up for Free</h2>
-            <form id="signup">
+
+            <!-- registrationn form -->
+
+            <form id="signup" method="POST" action="/actions/reg.php">
+
               <div class="row">
                 <div class="col-xs-12 col-sm-6">
                   <div class="form-group">
@@ -58,6 +63,43 @@
                 <input type="password" class="form-control" id="password" required data-validation-required-message="Please enter your password" autocomplete="off">
                 <p class="help-block text-danger"></p>
               </div>
+              <div class="form-group">
+                <label> Confirm Password<span class="req">*</span> </label>
+                <input type="password" class="form-control" id="con_passw" required data-validation-required-message="Please enter your password" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+
+              <script>
+  // Get the password input fields and the password match message element
+  var passwordInput = document.getElementById('password');
+  var confirmPasswordInput = document.getElementById('con_passw');
+  var passwordMatchMsg = document.getElementById('passwordMatchMsg');
+
+  // Add an event listener to the confirmPassword input field
+  confirmPasswordInput.addEventListener('input', function() {
+    // Compare the values of the password and confirmPassword input fields
+    
+
+    if (passwordInput.value === confirmPasswordInput.value) {
+      // If passwords match, set the message to "Passwords match"
+      passwordInput.classList.add("highlight");
+            confirmPasswordInput.classList.add("highlight");
+            // Remove mismatch class if present
+            passwordInput.classList.remove("mismatch");
+            confirmPasswordInput.classList.remove("mismatch");
+    } else {
+      // If passwords do not match, set the message to "Passwords do not match"
+      passwordInput.classList.add("mismatch");
+            confirmPasswordInput.classList.add("mismatch");
+            // Remove highlight class if present
+            passwordInput.classList.remove("highlight");
+            confirmPasswordInput.classList.remove("highlight");
+    }
+
+   
+  });
+</script>
+
               <div class="mrgn-30-top">
                 <button type="submit" class="btn btn-larger btn-block"/>
                 Sign up
@@ -96,7 +138,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <script  src="actions/script.js"></script>
 
 </body>
 </html>
