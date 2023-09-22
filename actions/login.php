@@ -2,40 +2,41 @@
 // Include database connection
 require_once 'db.php';
 
+$enteredUsername = $_POST["email"];
+$enteredPassword = $_POST["password"];
 
-session_start();
+// Query the database to retrieve the user's data
+$query = "SELECT * FROM user WHERE mail = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $enteredUsername);
+$stmt->execute();
+$result = $stmt->get_result();
 
+// Check if a user with the provided username exists
+if ($result->num_rows === 1) {
+    // User found, fetch the data
+    $userData = $result->fetch_assoc();
 
-
-// Check if the form has been submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the entered username and password from the form
-    $enteredUsername = $_POST["email"];
-    $enteredPassword = $_POST["password"];
-
-    // Use prepared statement to retrieve the user's password from the database
-    $stmt = $conn->prepare("SELECT usr_name, passw FROM user WHERE username = ?");
-    $stmt->bind_param("s", $enteredUsername);
-    $stmt->execute();
-    $stmt->bind_result($dbUsername, $dbPassword);
-    $stmt->fetch();
-    $stmt->close();
-
-    // Check if a matching username was found
-    if ($dbUsername && password_verify($enteredPassword, $dbPassword)) {
-        // Credentials are correct, so store user information in the session
-        $_SESSION["username"] = $enteredUsername;
-
-        // Redirect to the dashboard page
+    // Verify the entered password against the stored hashed password
+    if ($enteredPassword == $userData["passw"]) {
+        // Passwords match - authentication successful
         header("Location: ../dashboard/index.html");
-        exit();
+        echo "Authentication successful. Redirect to dashboard or perform other actions.";
+        
     } else {
-        // Credentials are incorrect, display an error message
-        $errorMessage = "Incorrect username or password.";
+        // Passwords don't match - show error message
+        header("refresh:3;url=../index.php");
+        echo "Incorrect password. Please try again.";
+        
     }
+} else {
+    // User not found - show error message
+    header("refresh:3;url=../index.php");
+    echo "User not found. Please check the username.";
 }
 
 // Close the database connection
+$stmt->close();
 $conn->close();
 
 ?>

@@ -105,11 +105,11 @@
                 Sign up
                 </button>
               </div>
-            </form method="POST" action="actions/login.php">
+            </form >
           </div>
           <div class="tab-pane fade in" id="login">
             <h2 class="text-uppercase text-center"> Log in</h2>
-            <form id="login">
+            <form id="login" method="POST" action="actions/login.php">
               <div class="form-group">
                 <label> Your Email<span class="req">*</span> </label>
                 <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address." autocomplete="off">
