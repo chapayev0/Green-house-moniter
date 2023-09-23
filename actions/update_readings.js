@@ -13,16 +13,16 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 // Path to the data you want to monitor
-const pathToData = 'sensor_readings';
+const pathToData = 'sensor_readings/hmdt';
 
 // Set up a listener for real-time updates
 database.ref(pathToData).on('value', (snapshot) => {
     const data = snapshot.val();
     // Update an HTML element with the new data
-    document.getElementById('data-display').innerText = data;
+    document.getElementById('hmdty').innerText = data;
 });
 
 
 setInterval(() => {
     // Trigger a database query or update here
-}, 5000); // 5000 milliseconds = 5 seconds
+}, 1000); // 5000 milliseconds = 5 seconds

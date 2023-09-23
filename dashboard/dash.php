@@ -17,8 +17,9 @@ $data = file_get_contents($url);
 // Convert the JSON response to a PHP array
 $jsonData = json_decode($data, true);
 
-// Loop through the data and display it on the HTML page
-foreach ($jsonData as $key => $value) {
-    echo "<p>{$key}: {$value}</p>";
-}
+$hmdt = $jsonData['hmdt'];
+$temp = $jsonData['temp'];
+$moist = $jsonData['moist'];
+
+
 ?>

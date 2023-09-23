@@ -6,6 +6,7 @@
   <title>Modernize Free</title>
   <link rel="shortcut icon" type="image/png" href="file:///C:/Users/Dilhara/Downloads/Compressed/Modernize-1.0.0/Modernize-1.0.0/src/assets/images/logos/favicon.png">
   <link rel="stylesheet" href="index_files/styles.min.css">
+  
 <style id="apexcharts-css">@keyframes opaque {
   0% {
       opacity: 0
@@ -624,7 +625,7 @@
               
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="ui-alerts.html" aria-expanded="false">
+              <a class="sidebar-link" href="http://localhost/Green-house-moniter/dashboard/html/ui-alerts.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-alert-circle"></i>
                 </span>
@@ -635,7 +636,7 @@
               
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="ui-forms.html" aria-expanded="false">
+              <a class="sidebar-link" href="http://localhost/Green-house-moniter/dashboard/html/ui-forms.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-file-description"></i>
                 </span>
@@ -723,7 +724,38 @@
             <div class="row">
               <div class="col-lg-12">
                 <!-- Yearly Breakup -->
+                
+                <?php include '../dash.php'; ?>
+                
                 <div class="card overflow-hidden">
+                  <div class="card-body p-4">
+                    <h5 class="card-title mb-9 fw-semibold">Temperature</h5>
+                    <div class="row align-items-center">
+                      <div class="col-8">
+                        <h4 class="fw-semibold mb-3"><?php echo $temp; ?></h4>
+                        <div class="d-flex align-items-center mb-3">
+                          
+                          <span class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-arrow-up-left text-success"></i>
+                          </span>
+                          <p class="fs-3 mb-0">Celcius</p>
+                        </div>
+                        
+                      </div>
+                      <div class="col-4">
+                        <div class="d-flex justify-content-center">
+<ul class="list-unstyled">
+        <listyle="margin-top: 10px;"=""><button class="btn btn-primary">Increase</button>
+        <listyle="margin-top: 10px;"=""><button class="btn btn-secondary" style="margin-top: 10px;">Derease</button>
+       
+    </listyle="margin-top:></listyle="margin-top:></ul>
+  
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><div class="card overflow-hidden">
                   <div class="card-body p-4">
                     <h5 class="card-title mb-9 fw-semibold">Temperature</h5>
                     <div class="row align-items-center">
@@ -740,8 +772,11 @@
                       </div>
                       <div class="col-4">
                         <div class="d-flex justify-content-center">
-  <button>Increase</button>
-  <button>Decrease</button>
+<ul class="list-unstyled">
+        <listyle="margin-top: 10px;"=""><button class="btn btn-primary">Increase</button>
+        <listyle="margin-top: 10px;"=""><button class="btn btn-secondary" style="margin-top: 10px;">Derease</button>
+       
+    </listyle="margin-top:></listyle="margin-top:></ul>
   
                           
                         </div>
@@ -749,6 +784,149 @@
                     </div>
                   </div>
                 </div>
+              </div><div class="col-lg-12">
+                <!-- Yearly Breakup -->
+                
+              </div>
+              <div class="col-lg-12">
+                <!-- Monthly Earnings -->
+                
+              </div>
+            </div>
+          </div><div class="col-lg-4">
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Yearly Breakup -->
+                <div class="card overflow-hidden">
+                  <div class="card-body p-4">
+                    <h5 class="card-title mb-9 fw-semibold">Humidity</h5>
+                    <div class="row align-items-center">
+                      <div class="col-8">
+                        <h4 class="fw-semibold mb-3" id="hmdty"><?php echo $hmdt; ?></h4>
+                        <div class="d-flex align-items-center mb-3">
+                          
+                          <span class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-arrow-up-left text-success"></i>
+                          </span>
+                          <p class="fs-3 mb-0">g.m-3</p>
+                        </div>
+                        
+                      </div>
+                      <div class="col-4">
+                        <div class="d-flex justify-content-center">
+<ul class="list-unstyled">
+        <listyle="margin-top: 10px;"=""><button class="btn btn-primary">Increase</button>
+        <listyle="margin-top: 10px;"=""><button class="btn btn-secondary" style="margin-top: 10px;">Derease</button>
+       
+    </listyle="margin-top:></listyle="margin-top:></ul>
+  
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><div class="card overflow-hidden">
+                  <div class="card-body p-4">
+                    <h5 class="card-title mb-9 fw-semibold">Temperature</h5>
+                    <div class="row align-items-center">
+                      <div class="col-8">
+                        <h4 class="fw-semibold mb-3">25</h4>
+                        <div class="d-flex align-items-center mb-3">
+                          
+                          <span class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-arrow-up-left text-success"></i>
+                          </span>
+                          <p class="fs-3 mb-0">Celcius</p>
+                        </div>
+                        
+                      </div>
+                      <div class="col-4">
+                        <div class="d-flex justify-content-center">
+<ul class="list-unstyled">
+        <listyle="margin-top: 10px;"=""><button class="btn btn-primary">Increase</button>
+        <listyle="margin-top: 10px;"=""><button class="btn btn-secondary" style="margin-top: 10px;">Derease</button>
+       
+    </listyle="margin-top:></listyle="margin-top:></ul>
+  
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><div class="col-lg-12">
+                <!-- Yearly Breakup -->
+                
+              </div>
+              <div class="col-lg-12">
+                <!-- Monthly Earnings -->
+                
+              </div>
+            </div>
+          </div><div class="col-lg-4">
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Yearly Breakup -->
+                <div class="card overflow-hidden">
+                  <div class="card-body p-4">
+                    <h5 class="card-title mb-9 fw-semibold">Soil Moisture</h5>
+                    <div class="row align-items-center">
+                      <div class="col-8">
+                        <h4 class="fw-semibold mb-3"><?php echo $moist; ?></h4>
+                        <div class="d-flex align-items-center mb-3">
+                          
+                          <span class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-arrow-up-left text-success"></i>
+                          </span>
+                          <p class="fs-3 mb-0">bars</p>
+                        </div>
+                        
+                      </div>
+                      <div class="col-4">
+                        <div class="d-flex justify-content-center">
+<ul class="list-unstyled">
+        <listyle="margin-top: 10px;"=""><button class="btn btn-primary">Increase</button>
+        <listyle="margin-top: 10px;"=""><button class="btn btn-secondary" style="margin-top: 10px;">Derease</button>
+       
+    </listyle="margin-top:></listyle="margin-top:></ul>
+  
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><div class="card overflow-hidden">
+                  <div class="card-body p-4">
+                    <h5 class="card-title mb-9 fw-semibold">Temperature</h5>
+                    <div class="row align-items-center">
+                      <div class="col-8">
+                        <h4 class="fw-semibold mb-3">25</h4>
+                        <div class="d-flex align-items-center mb-3">
+                          
+                          <span class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-arrow-up-left text-success"></i>
+                          </span>
+                          <p class="fs-3 mb-0">Celcius</p>
+                        </div>
+                        
+                      </div>
+                      <div class="col-4">
+                        <div class="d-flex justify-content-center">
+<ul class="list-unstyled">
+        <listyle="margin-top: 10px;"=""><button class="btn btn-primary">Increase</button>
+        <listyle="margin-top: 10px;"=""><button class="btn btn-secondary" style="margin-top: 10px;">Derease</button>
+       
+    </listyle="margin-top:></listyle="margin-top:></ul>
+  
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><div class="col-lg-12">
+                <!-- Yearly Breakup -->
+                
               </div>
               <div class="col-lg-12">
                 <!-- Monthly Earnings -->
@@ -767,7 +945,7 @@
         </div>
         
         <div class="py-6 px-6 text-center">
-          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com/">ThemeWagon</a></p>
+          <p class="mb-0 fs-4">Copyright to Smart Grow 2023</p>
         </div>
       </div>
     </div>
@@ -780,5 +958,8 @@
   <script src="index_files/simplebar.js"></script>
   <script src="index_files/dashboard.js"></script>
 
+  <script  src="/actions/update_readings.js"></script>
 
-<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink" svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M-1 60L-1 60C-1 60 47 60 47 60C47 60 94 60 94 60C94 60 141 60 141 60C141 60 188 60 188 60C188 60 235 60 235 60C235 60 282 60 282 60C282 60 282 60 282 60 "></path></svg><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink" svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>
+
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink" svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M-1 60L-1 60C-1 60 47 60 47 60C47 60 94 60 94 60C94 60 141 60 141 60C141 60 188 60 188 60C188 60 235 60 235 60C235 60 282 60 282 60C282 60 282 60 282 60 "></path></svg><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink" svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink" svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>
